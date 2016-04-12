@@ -1,0 +1,16 @@
+body {
+    background-color: teal;
+    color: black;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-color: grey;
+}
+.heading {
+    text-align: center;
+    color: gold;
+}

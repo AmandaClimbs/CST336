@@ -1,0 +1,25 @@
+while($row = $tableGrab->fetch()) {
+            echo "<tr><td>";
+            echo "<a href=index.php?item=" . rawurlencode($row['name']) . ">" . $row['name'] . "</a>"
+            . "</td>"
+            . "<td>" . $row['category'] . "</td>"
+            . "<td>" . number_format($row['price'], 2) . "</td>"
+            . "<td>" . $row['healthy'] . "</td>";
+            echo "</tr>";
+            
+            
+//put at bottom of menu
+    <div class="itemDescription">
+       <?php //display description
+          if (isset($_GET['item'])) {
+            $item_select = "SELECT * FROM otter_express WHERE name LIKE '" . $_GET['item'] . "'";
+            $itemLookup = $dbConn->prepare($item_select);
+            $itemLookup->execute();
+            
+            while($row = $itemLookup->fetch()) {
+            echo $row['description'];
+          }
+
+          }
+       ?>
+    </div>
